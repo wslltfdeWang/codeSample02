@@ -1,0 +1,23 @@
+<view class="_div">
+    <view class="_div wrapper">
+        <view class="_div banner">
+            <image style="width:100%;height:366rpx;" mode="aspectFit" src="https://golden-adviser.com:8443/images/info_entry_banner.png" />
+        </view>
+        <view class="_div selection-wrapper">
+            <view class="_div selection" bindtap="personal">
+                <image alt="{{status.title}}" class="_img" src="../../../../images/info_entry_person.png"></image>
+                <view class="_div selection-txt">
+                    <view class="_p status">个人用户</view>
+                </view>
+                <image  class="_imgarrow" src="../../../../images/rightpoint.png"></image>
+            </view>
+            <view class="_div selection" bindtap="enterprise">
+                <image alt="{{status.title}}" class="_img" src="../../../../images/info_entry_enterprise.png"></image>
+                <view class="_div selection-txt">
+                    <view class="_p status">企业用户</view>
+                </view>
+                <image  class="_imgarrow" src="../../../../images/rightpoint.png"></image>
+            </view>
+        </view>
+    </view>
+</view>

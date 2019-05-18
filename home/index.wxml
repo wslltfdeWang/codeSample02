@@ -1,0 +1,58 @@
+<view class="page">
+<view class="banner">
+    <image style="width:100%;height:427rpx;display:inline-block;overflow:hidden;margin-top:-15rpx;" mode="aspectFit" src="../../images/bg2x.png" />
+</view>
+<view class="selection-wrapper">
+
+      <image style="width:100%;height:427rpx;display:inline-block;overflow:hidden;" mode="aspectFit" src="../../images/banner2x.png" />
+
+      <view class="module" bindtap="loanApply">
+        <image mode="aspectFit" style="width:670rpx;height:220rpx;" src="../../images/daikuanfangan2x.png" />
+      </view>
+
+      <view class="module" bindtap="govApply">
+        <image mode="aspectFit" style="width:670rpx;height:220rpx;"  src="../../images/daikuanbutie2x.png" />
+      </view>
+
+      <view class="module" bindtap="secuApply">
+        <image mode="aspectFit" style="width:670rpx;height:220rpx;"  src="../../images/baoxianfangan2x.png" />
+      </view>
+
+      <view class="module" style="margin-bottom:8rpx;" bindtap="demandArea">
+        <image mode="aspectFit" style="width:670rpx;height:220rpx;"  src="../../images/demand-area.png" />
+      </view>
+    <!--新闻资讯-->
+    <view class="space">
+          <image mode="aspectFit" style="width:36rpx;height:36rpx;margin-left:-2rpx;margin-top:10rpx;position:absolute;"
+           src="../../images/house_icon.png"></image>
+
+          <view class="news-txt">
+              <view class="status">新闻资讯</view>
+          </view>
+          <view class="more-txt" bindtap="loadMore">
+              <view class="status" style="font-weight:300;" bindtap="loadMoreNews">查看更多>></view>
+          </view>
+    </view>
+    <!--新闻列表-->
+    <view class="headLine box box-tb">
+      <view class="headLineWra box box-lr"  wx:for="{{newsList}}" bindtap="jumpNewsDetail" data-news-id="{{item.newsId}}" >
+          <view class="arrowsBox box box-tb box-align-center box-pack-around">
+              <image src="{{item.iconUrl}}"></image>
+          </view>
+          <view class="headLineContent box box-tb box-pack-center">
+              <view class="headLineTitle">
+                {{item.title}}
+              </view>
+              <view class="headLineInfor  box box-lr box-pack-between">
+                  <view class="headLineSource">
+                    日期：{{item.createTime}}
+                  </view>
+                  <view class="headLineSource">
+                    转载来源：{{item.source}}
+                  </view>
+              </view>
+          </view>
+      </view>
+    </view>
+  </view>
+</view>

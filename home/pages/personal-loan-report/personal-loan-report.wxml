@@ -1,0 +1,156 @@
+<import src="../../../common/Templates.wxml" />
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+<!--<view class="banner">
+    <image style="width:95%;height:213px;display:inline-block;overflow:hidden;margin-left:2.5%;" mode="aspectFit" src="../../../../images/banner2x.png" />
+</view>-->
+<view class="userinfo">
+    <view style="height:240rpx;">
+        <image mode="aspectFit" style="width:630rpx;height:560rpx;margin-top:-84rpx;"  
+          src="https://www.golden-adviser.com:8443/images/personal-loan-report/logo3.png" />
+    </view>
+</view>
+
+<view class="selection-wrapper" wx:for-items="{{loanList}}" wx:key='index' wx:for-item="item">
+    <view  class="selection">
+        <form bindsubmit="doNext">
+            <view class="section-group">
+                 <view class="section">
+                    <view class="space">
+                          <view class="title-txt">
+                              <view class="status-txt">方案{{numList[index]}}</view>
+                          </view>
+                    </view>
+                </view>
+            </view>
+            <view class="section-group">
+                 <view class="section">
+                    <view class="bank">
+                        <image mode="aspectFit"
+                            style="width:36rpx;height:36rpx;margin-left:-5rpx;margin-top:25rpx;position:absolute;"
+                            src="../../../../images/house_icon.png" />
+                        <span style="margin-left:30rpx;font-weight:bold;">{{item.mechanism}}</span>
+                        <image mode="aspectFit"
+                            style="width:36rpx;height:36rpx;margin-left:-5rpx;margin-top:25rpx;position:absolute;"
+                            src="../../../../images/bank_icon.png" />
+                        <span style="margin-left:30rpx">{{item.loanName}}</span>
+                    </view>
+                 </view>
+            </view>
+            <view class="middle">
+                <view class="flex-row" style="display: flex;flex-direction: row;margin-top:27rpx;">
+                        <view class="flex-view-item" style="width:50%;">
+                            <view class="selection-report back">
+                                <view class="desc">办理费用</view>
+                                <view class="status">{{item.handlingFee}}<span style="font-size:36rpx;">%</span></view>
+                            </view>
+                        </view>
+                        <view class="flex-view-item" style="width:50%;">
+                            <view class="selection-report back">
+                                <view class="desc">月利息</view>
+                                <view class="status">{{item.cost}}</view>
+                            </view>
+                        </view>
+                    </view>
+
+                 <view class="section">
+                    <view class="flex-row" style="display: flex;flex-direction: column;">
+                           <view style="height:200rpx;">
+                                    <view class="desc-center">最大可贷额度</view>
+                                    <view class="status-center">{{item.amount}}<span style="font-size:36rpx;">万元</span></view>
+                            </view>
+                        </view>
+                 </view>
+                <view class="horizontal-line"></view>
+                <view class="flex-row" style="display: flex;flex-direction: row;margin-top:27rpx;">
+                    <view class="flex-view-item" style="width:50%;border-right: 2rpx solid #FFF;">
+                        <view class="selection-report">
+                            <view class="desc">还款方式</view>
+                            <!--换行处理-->
+                            <view class="status"><text decode="true">{{item.repayMethod}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="flex-view-item" style="width:50%;">
+                        <view class="selection-report">
+                            <view class="desc">时间</view>
+                            <view class="status"><text>{{item.lendTime}}</text></view>
+                        </view>
+                    </view>
+                </view>
+              </view>
+
+            <view class="section-group">
+                 <view>
+                    <view class="bank">
+                        <image mode="aspectFit"
+                            style="width:36rpx;height:36rpx;margin-left:-5rpx;margin-top:25rpx;position:absolute;"
+                            src="../../../../images/house_icon.png" />
+                        <span style="margin-left:30rpx;font-weight:bold;">可行性分析</span>
+                    </view>
+                 </view>
+                 <view>
+                     人工方案反馈
+                 </view>
+            </view>
+
+            <view class="section-group">
+                 <view>
+                    <view class="bank">
+                        <image mode="aspectFit"
+                            style="width:36rpx;height:36rpx;margin-left:-5rpx;margin-top:25rpx;position:absolute;"
+                            src="../../../../images/house_icon.png" />
+                        <span style="margin-left:30rpx;font-weight:bold;">存在的问题</span>
+                    </view>
+                    <view>
+                        人工方案反馈
+                    </view>
+                 </view>
+            </view>
+
+            <button bindtap="deal" data-result-id="{{item.resultId}}" class="submitButton submitButton-left"  style="margin-top:50rpx;margin-bottom:50rpx;" hoverClass="submitButton-hover">点击办理</button>
+            <button bindtap="man" data-result-id="{{item.resultId}}" class="submitButton submitButton-right"  style="margin-top:50rpx;margin-bottom:50rpx;" hoverClass="submitButton-hover">人工方案</button>
+
+        </form>
+    </view>
+</view>
+
+<view class="selection-wrapper">
+  <view class="module" style="margin-bottom:-41rpx;margin-top:2rpx;width:100%;border-radius:21rpx;background-color:#FFF;" bindtap="demandArea">
+      <image mode="aspectFit" style="width:670rpx;height:220rpx;"  src="../../../../images/demand-area.png" />
+  </view>
+</view>
+
+<!--推荐方案-->
+<view class="selection-wrapper">
+    <view class="space-product">
+          <image mode="aspectFit" style="width:44rpx;height:44rpx;margin-left:-6rpx;margin-top:2rpx;position:absolute;"
+           src="../../../../images/house_icon.png"></image>
+
+          <view class="news-txt">
+              <view class="product">爆款推荐</view>
+          </view>
+    </view>
+    <view  class="selection">
+        <view class='list'>
+          <block wx:for-items="{{recommendLoanList}}" wx:key='index' wx:for-item="item">
+          <view class="list_item">
+              <!--<navigator url='details?id={{item.goods_id}}'>-->
+              <view class='img'>
+                <image src="{{item.loanUrl}}"  mode="scaleToFill"/>
+              </view>
+              <view class='info'>
+                <view class='title'>{{item.mechanism}}-{{item.loanName}}</view>
+                <view class='num'>最大额度:{{item.amount}}万元</view>
+                <view class='price'>月利息:{{item.cost}}</view>
+                <button bindtap="appoint" data-result-id="{{item.loanId}}" class="submitButton submitButton-center" hoverClass="submitButton-hover">免费预约咨询</button>
+                <!--<image  class="_imgarrow" src="../../../../images/rightpoint.png"></image>-->
+              </view>
+               <!--</navigator>-->
+              <view class='clear'></view>
+          </view>
+          </block>
+        </view>
+    </view>
+</view>
+<view class="toast warn" wx:if="{{warnMsg}}">{{warnMsg}}</view>
+</view>

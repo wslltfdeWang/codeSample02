@@ -1,0 +1,46 @@
+<import src="../../../common/Templates.wxml" />
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+<view class="banner">
+    <image style="width:100%;width:100%;height:427rpx;display:inline-block;overflow:hidden;" mode="aspectFit" src="../../../../images/banner2x.png" />
+</view>
+<view class="selection-wrapper">
+    <view class="selection">
+        <form bindsubmit="doNext">
+            <view class="section-group">
+                <view class="section">
+                    <text class="title">
+                    <text class="red">*</text>金额(万元)</text>
+                    <input class="content" name="amount" placeholder="请输入金额" placeholderClass="placeholderStyle" value="{{amount}}"></input>
+                </view>
+                <view class="section">
+                    <text class="title">
+                        <text class="red">*</text>用途</text>
+                    <image class="icon" src="/images/rightpoint.png"></image>
+                    <picker bindchange="changeIndex" class="{{companyUsageIndex==0?'nullcontent':'content'}}" data-sectionsign="companyUsage" name="companyUsage" range="{{companyUsageValues}}" value="{{companyUsageIndex}}">
+                {{companyUsageValues[companyUsageIndex]}}
+                </picker>
+                </view>
+                <view class="section">
+                    <text class="title">
+                    <text class="red">*</text>企业名称</text>
+                    <input class="content" name="companyName" placeholder="请输入公司名称" placeholderClass="placeholderStyle" value="{{companyName}}"></input>
+                </view>
+                <view class="section">
+                    <text class="title">
+                        <text class="red">*</text>是否具有抵押物资</text>
+                    <image class="icon" src="/images/rightpoint.png"></image>
+                    <picker bindchange="changeIndex" class="{{mortgageThingsIndex==0?'nullcontent':'content'}}" data-sectionsign="mortgageThings" name="mortgageThings" range="{{mortgageThingsValues}}" value="{{mortgageThingsIndex}}">
+                {{mortgageThingsValues[mortgageThingsIndex]}}
+                </picker>
+                </view>
+            </view>
+
+            <!--<button bindtap="goBack" class="submitButton submitButton-left" hoverClass="submitButton-hover">返回上一步</button>
+            <button class="submitButton submitButton-right" disabled="{{btnDisabled}}" formType="submit" hoverClass="submitButton-hover" loading="{{btnLoading}}">下一步</button>-->
+
+            <button class="submitButton submitButton-center" formType="submit" hoverClass="submitButton-hover">预约人工方案</button>
+        </form>
+    </view>
+</view>
+<view class="toast warn" wx:if="{{warnMsg}}">{{warnMsg}}</view>
+</view>

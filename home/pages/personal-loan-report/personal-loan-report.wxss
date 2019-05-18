@@ -1,0 +1,285 @@
+@import "../../../common/lib/weui.wxss";
+
+label {
+  display: inline-block;
+  min-width: 270rpx;
+  margin-right: 20rpx;
+}
+
+form{
+  width: 100%;
+}
+
+.picker-text {
+  margin-left: 20rpx;
+  position: relative;
+}
+
+.banner {
+    width: 100%;
+    height: 364rpx;
+    background-size: cover;
+    margin-top:-69rpx;
+}
+
+.selection-wrapper {
+    width: 720rpx;
+    margin: 70rpx auto 0 auto;
+    font-size: 0;
+}
+
+.selection {
+    position: relative;
+    display: inline-block;
+    width: 720rpx;
+    background: #FAFAFA;
+    margin-bottom: -43rpx;
+    box-shadow: 0 8rpx 24rpx 0 rgba(0,0,0,0.05);
+    border-radius: 21rpx;
+}
+
+.selection-hover {
+    background-color: #f8f8f8;
+}
+
+.selection::after {
+    content: '';
+    position: absolute;
+    width: 24rpx;
+    height: 24rpx;
+    background-size: cover;
+    top: 62rpx;
+    left: 598rpx;
+}
+
+.selection ._img {
+    position: absolute;
+    width: 144rpx;
+    height: 144rpx;
+    left: 40rpx;
+    top: 28rpx;
+}
+
+.selection-txt {
+    position: absolute;
+    top: 72rpx;
+    left: 254rpx;
+    text-align: left;
+}
+
+.status {
+    color: #FFF;
+    font-size: 36rpx;
+    line-height: 50rpx;
+    font-weight: bold;
+}
+
+.desc {
+    color:#FFF;
+    font-size:38rpx;
+    line-height:60rpx;
+    margin-top:4rpx;
+}
+
+.selection ._imgarrow {
+    position:absolute;
+	width:36rpx;
+	height:36rpx;
+	right:10rpx;
+	top:76rpx;
+}
+
+.bank {
+	height:84rpx;
+	line-height:84rpx;
+	font-size:37rpx;
+	color:#EECC99;
+}
+
+.selection-report {
+    top: 72rpx;
+    left: 254rpx;
+    text-align: center;
+}
+
+.yuan {
+    font-size:37rpx;
+    font-weight:normal;
+}
+
+.horizontal-line {
+    border-bottom:2rpx solid #FFF;
+    width:100%;
+}
+
+.middle {
+    position: relative;
+    display: inline-block;
+    width: 670rpx;
+    background: #302E2F;
+    margin-bottom: 32rpx;
+    margin-top:32rpx;
+    box-shadow: 0 8rpx 24rpx 0 rgba(0,0,0,0.05);
+    border-radius: 21rpx;
+    height:580rpx;
+    margin-left:25rpx;
+}
+
+.back{
+    height:120rpx;
+    line-height:120rpx;
+    border-radius:30rpx;
+    background:#EECC99!important;
+    color:#FFF;
+    font-weight:bold;
+    font-size:54rpx;
+    letter-spacing:4rpx;
+    width:90%;
+    margin-left:5%;
+    margin-top:10rpx
+}
+
+.desc-center {
+    color:#FFF;
+    font-size:40rpx;
+    line-height:50rpx;
+    font-weight:bold;
+    margin-top:85rpx;
+    margin-bottom:25rpx;
+    float:20rpx;
+    margin-left:50rpx;
+}
+
+.status-center {
+    color:#e7b485;
+    font-size:90rpx;
+    line-height:50rpx;
+    font-weight:bold;
+    margin-bottom:25rpx;
+    float:right;
+    margin-right:50rpx;
+    margin-top:-74rpx;
+}
+
+.space {
+    position: relative;
+    display: inline-block;
+    height: 30rpx;
+    margin-bottom: 32rpx;
+    display: flex;  
+    flex-direction: column;  
+    align-items: center;  
+    margin-top:32rpx
+}
+
+.title-txt {
+  text-align:center;
+}
+
+
+.status-txt {
+    color: #333;
+    font-size: 51rpx;
+    line-height: 50rpx;
+    font-weight: bold;
+}
+
+.userinfo {  
+  position: relative;  
+  width: 750rpx;  
+  height: 320rpx;  
+  display: flex;  
+  flex-direction: column;  
+  align-items: center;  
+  margin-top:-60rpx;
+  margin-bottom:-40rpx;
+} 
+
+/*推广产品*/
+
+.clear{
+  clear: both;
+  overflow: hidden;
+}
+navigator{
+  display:inline;
+}
+.list{
+  margin-top:10px;
+}
+ 
+.list .list_item{
+  margin-top:20rpx;
+  padding:20rpx;
+  height:304rpx;
+  border-bottom:2rpx solid #E8E8E8;
+}
+.list .list_item .img{
+  float:left;
+  width:40%;
+  height:100%;
+}
+.list .list_item .img image{
+   width:100%;
+   height:100%;
+}
+ 
+.list .list_item .info{
+  width:59%;
+  float:right;
+  height:200rpx;
+  position:relative;
+}
+.list .list_item .info .title{
+  color:#333;
+  margin-left:20rpx;
+  font-size: 30rpx;
+}
+ 
+.list .list_item .info .price{
+  color:#333;
+  margin-left:20rpx;
+  margin-top:20rpx;
+  font-size:30rpx;
+}
+ 
+.list .list_item .info .num{
+  position: absolute;
+  left:0px;
+  bottom:20rpx;
+  color:#333;
+  margin-left:20rpx;
+  font-size:30rpx;
+}
+
+.space-product {
+    position:relative;
+    display:inline-block;
+    width:670rpx;
+    height:59rpx;
+    margin-bottom:20rpx;
+    margin-top:20rpx;
+}
+
+.news-txt {
+  position:absolute;
+  left:44rpx;
+  text-align:left;
+}
+
+.product {
+    font-size: 50rpx;
+    line-height: 50rpx;
+    font-weight: bold;
+}
+.module {
+  position: relative;
+  display: inline-block;
+  width: 670rpx;  
+  height:220rpx;
+  display:inline-block;
+  overflow:hidden;
+  margin-top:-50rpx;
+  margin-bottom:46rpx;
+  overflow:hidden;
+}

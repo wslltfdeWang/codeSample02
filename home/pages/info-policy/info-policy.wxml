@@ -1,0 +1,34 @@
+<view class="page">
+
+	<view style="width:100%;height:90%;text-align:center;margin-bottom:-79rpx;">
+    <image mode="aspectFit" src="https://golden-adviser.com:8443/images/policy/policy1.png"  style="width:670rpx;height:800rpx;">
+    </image>
+  </view>
+
+  <view style="width:100%;height:90%;text-align:center;">
+    <image mode="aspectFit" src="https://golden-adviser.com:8443/images/policy/policy2.png"
+    style="width:670rpx;height:1200rpx;margin-top:-165rpx">
+    </image>
+  </view>
+
+  <view style="width:100%;height:90%;text-align:center;">
+    <image mode="aspectFit" src="https://golden-adviser.com:8443/images/policy/policy3.png"
+    style="width:670rpx;height:1200rpx;margin-top:-291rpx">
+    </image>
+  </view>
+
+  <view style="width:100%;height:90%;text-align:center;">
+    <image mode="aspectFit" src="https://golden-adviser.com:8443/images/policy/policy4.png"
+    style="width:670rpx;height:1200rpx;margin-top:-41px">
+    </image>
+  </view>
+
+  <view style="width:100%;height:90%;text-align:center;">
+    <image mode="aspectFit" src="https://golden-adviser.com:8443/images/policy/policy5.png"
+    style="width:670rpx;height:1200rpx;margin-top:-179rpx">
+    </image>
+  </view>
+
+   <button bindtap="man"  class="submitButton submitButton-center" style="margin-top:-57rpx;" formType="submit" hoverClass="submitButton-hover">预约人工方案</button>
+
+</view>

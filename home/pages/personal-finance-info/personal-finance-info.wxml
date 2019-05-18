@@ -1,0 +1,170 @@
+<import src="../../../common/Templates.wxml"/>
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="banner">
+        <image style="width:100%;width:100%;height:427rpx;display:inline-block;overflow:hidden;" mode="aspectFit"
+               src="../../../../images/personal_finance_info_banner.png"/>
+    </view>
+    <view class="selection-wrapper">
+        <view class="selection">
+            <form bindsubmit="doNext">
+                <view class="section-group">
+                    <!--商业保单-->
+                    <view wx:for-items="{{insurance}}" wx:for-index="idx" wx:key="key" wx:for-item="item">
+                        <view class="section-add">
+                            <view class="section">
+                                <text class="title">商业保单(元)</text>
+                                <input class="content" name="insurancePay{{idx}}" bindinput="addChange"
+                                       data-idx="{{idx}}" data-type="insurance" data-detail="pay"
+                                       placeholder="请输入商业保单费"
+                                       placeholderClass="placeholderStyle" value="{{item.pay}}"></input>
+                            </view>
+                            <block wx:if="{{idx == 0}}">
+                                <view class="button" bindtap="addItem" data-idx="{{idx}}" data-type="insurance"
+                                      data-detail="add">
+                                    <image mode="aspectFit" style="width:30rpx;height:30rpx;"
+                                           src="../../../../images/add.png"/>
+                                </view>
+                            </block>
+                            <block wx:else>
+                                <view class="button" bindtap="delItem" data-idx="{{idx}}" data-type="insurance"
+                                      data-detail="del">
+                                    <image mode="aspectFit" style="width:30rpx;height:30rpx;"
+                                           src="../../../../images/del.png"/>
+                                </view>
+                            </block>
+                        </view>
+                        <block wx:if="{{insuranceFlag}}">
+                            <view class="section-add">
+                                <view class="section">
+                                    <text class="title2">缴费次数</text>
+                                    <input class="content" name="insuranceYear{{idx}}" placeholder="请输入商业保单连续缴费次数"
+                                           data-idx="{{idx}}" data-type="insurance" data-detail="num"
+                                           bindinput="addChange"
+                                           placeholderClass="placeholderStyle" value="{{item.num}}"></input>
+                                </view>
+                            </view>
+                        </block>
+                    </view>
+                    <!--车贷月供-->
+                    <view wx:for-items="{{cars}}" wx:for-index="idx" wx:key="key" wx:for-item="item">
+                        <view class="section-add">
+                            <view class="section">
+                                <text class="title">车贷月供(元)</text>
+                                <input class="content" name="carMortPay{{idx}}" bindinput="addChange"
+                                       data-idx="{{idx}}" data-type="cars" data-detail="pay"
+                                       placeholder="请输入车贷月供"
+                                       placeholderClass="placeholderStyle" value="{{item.pay}}"></input>
+                            </view>
+                            <block wx:if="{{idx == 0}}">
+                                <view class="button" bindtap="addItem" data-idx="{{idx}}" data-type="cars"
+                                      data-detail="add">
+                                    <image mode="aspectFit" style="width:30rpx;height:30rpx;"
+                                           src="../../../../images/add.png"/>
+                                </view>
+                            </block>
+                            <block wx:else>
+                                <view class="button" bindtap="delItem" data-idx="{{idx}}" data-type="cars"
+                                      data-detail="del">
+                                    <image mode="aspectFit" style="width:30rpx;height:30rpx;"
+                                           src="../../../../images/del.png"/>
+                                </view>
+                            </block>
+                        </view>
+                        <block wx:if="{{carsFlag}}">
+                            <view class="section-add">
+                                <view class="section">
+                                    <text class="title2">连续月份</text>
+                                    <input class="content" name="carMortMonth{{idx}}" placeholder="请输入车贷连续上交月份"
+                                           data-idx="{{idx}}" data-type="cars" data-detail="num"
+                                           bindinput="addChange"
+                                           placeholderClass="placeholderStyle" value="{{item.num}}"></input>
+                                </view>
+                            </view>
+                        </block>
+                    </view>
+                    <!--社保-->
+                    <view wx:for-items="{{socialSecurity}}" wx:for-index="idx" wx:key="key" wx:for-item="item">
+                        <view class="section-add">
+                            <view class="section">
+                                <text class="title">社保基数(元)</text>
+                                <input class="content" name="socialSecurityBase{{idx}}" bindinput="addChange"
+                                       data-idx="{{idx}}" data-type="socialSecurity" data-detail="pay"
+                                       placeholder="请输入社保基数"
+                                       placeholderClass="placeholderStyle" value="{{item.pay}}"></input>
+                            </view>
+                        </view>
+                        <block wx:if="{{socialSecurityFlag}}">
+                            <view class="section-add">
+                                <view class="section">
+                                    <text class="title2">连续月份</text>
+                                    <input class="content" name="houseMortMonth{{idx}}" placeholder="请输入社保连续上交月份"
+                                           data-idx="{{idx}}" data-type="socialSecurity" data-detail="num"
+                                           bindinput="addChange"
+                                           placeholderClass="placeholderStyle" value="{{item.num}}"></input>
+                                </view>
+                            </view>
+                        </block>
+                    </view>
+
+                    <!--公积金-->
+                    <view wx:for-items="{{houseFund}}" wx:for-index="idx" wx:key="key" wx:for-item="item">
+                        <view class="section-add">
+                            <view class="section">
+                                <text class="title">公积金(元)</text>
+                                <input class="content" name="houseFundBase{{idx}}" bindinput="addChange"
+                                       data-idx="{{idx}}" data-type="houseFund" data-detail="pay"
+                                       placeholder="请输入公积金"
+                                       placeholderClass="placeholderStyle" value="{{item.pay}}"></input>
+                            </view>
+                        </view>
+                        <block wx:if="{{houseFundFlag}}">
+                            <view class="section-add">
+                                <view class="section">
+                                    <text class="title2">连续月份</text>
+                                    <input class="content" name="houseFundMonth{{idx}}" placeholder="请输入公积金连续上交月份"
+                                           data-idx="{{idx}}" data-type="houseFund" data-detail="num"
+                                           bindinput="addChange"
+                                           placeholderClass="placeholderStyle" value="{{item.num}}"></input>
+                                </view>
+                            </view>
+                        </block>
+                    </view>
+                    <!--打卡工资-->
+                    <view wx:for-items="{{wage}}" wx:for-index="idx" wx:key="key" wx:for-item="item">
+                        <view class="section-add">
+                            <view class="section">
+                                <text class="title">打卡工资(元)</text>
+                                <input class="content" name="wage{{idx}}" bindinput="addChange"
+                                       data-idx="{{idx}}" data-type="wage" data-detail="pay"
+                                       placeholder="请输入工资"
+                                       placeholderClass="placeholderStyle" value="{{item.pay}}"></input>
+                            </view>
+                        </view>
+                        <block wx:if="{{wageFlag}}">
+                            <view class="section-add">
+                                <view class="section">
+                                    <text class="title2">连续月份</text>
+                                    <input class="content" name="wageMonth{{idx}}" placeholder="请输入工资连续上交月份"
+                                           data-idx="{{idx}}" data-type="wage" data-detail="num"
+                                           bindinput="addChange"
+                                           placeholderClass="placeholderStyle" value="{{item.num}}"></input>
+                                </view>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+
+
+                <button bindtap="goBack" class="submitButton submitButton-left" hoverClass="submitButton-hover">返回上一步
+                </button>
+                <button class="submitButton submitButton-right" disabled="{{btnDisabled}}" formType="submit"
+                        hoverClass="submitButton-hover" loading="{{btnLoading}}">下一步
+                </button>
+            </form>
+        </view>
+    </view>
+    <view class="tip">
+    <text class="tips">注意：以上内容为选填项，但填写越完整，方案越精准</text>
+    </view>
+    <view class="toast warn" wx:if="{{warnMsg}}">{{warnMsg}}</view>
+</view>

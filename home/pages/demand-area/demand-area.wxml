@@ -1,0 +1,34 @@
+<import src="../../../common/Templates.wxml" />
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+<view class="banner">
+    <image style="width:100%;width:100%;height:427rpx;display:inline-block;overflow:hidden;" mode="aspectFit" src="../../../../images/banner2x.png" />
+</view>
+<view class="selection-wrapper">
+    <view class="selection">
+        <form bindsubmit="doNext">
+            <view class="section-group">
+                <view class="section">
+                    <text class="title">
+                        <text class="red">*</text>需求类别</text>
+                    <image class="icon" src="/images/rightpoint.png"></image>
+                    <picker bindchange="changeIndex" class="{{demandTypeIndex==0?'nullcontent':'content'}}" data-sectionsign="demandType" name="demandType" range="{{demandTypeValues}}" value="{{demandTypeIndex}}">
+                {{demandTypeValues[demandTypeIndex]}}
+                </picker>
+                </view>
+                <view class="page-section">
+                    <view class="page-section-title" style="height:84rpx;line-height:84rpx;border-bottom:2rpx solid #eee;"><text class="red">*</text>需求描述</view>
+                    <view class="textarea-wrp">
+                       <textarea auto-focus="true" style="height: 3em" name="demandDesc" placeholder="请输入您的需求" value="{{demandDesc}}" />
+                    </view>
+                  </view>
+            </view>
+
+            <!--<button bindtap="goBack" class="submitButton submitButton-left" hoverClass="submitButton-hover">返回上一步</button>
+            <button class="submitButton submitButton-right" disabled="{{btnDisabled}}" formType="submit" hoverClass="submitButton-hover" loading="{{btnLoading}}">下一步</button>-->
+
+            <button class="submitButton submitButton-center" style="margin-top:164rpx;" formType="submit" hoverClass="submitButton-hover">提交</button>
+        </form>
+    </view>
+</view>
+<view class="toast warn" wx:if="{{warnMsg}}">{{warnMsg}}</view>
+</view>

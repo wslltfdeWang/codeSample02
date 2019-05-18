@@ -1,0 +1,107 @@
+<import src="../../../common/Templates.wxml" />
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+<view class="banner">
+    <image style="width:100%;width:100%;height:427rpx;display:inline-block;overflow:hidden;" mode="aspectFit" src="../../../../images/personal_assets_info_banner.png" />
+</view>
+ <view class="selection-wrapper">
+    <view class="selection">
+        <form bindsubmit="doNext">
+            <view class="section-group">
+                <view class="section">
+                    <text class="title"><text class="red">*</text>工作</text>
+                    <image class="icon" src="/images/rightpoint.png"></image>
+                    <picker bindchange="changeIndex" class="{{jobIndex==0?'nullcontent':'content'}}" data-sectionsign="job" name="job" range="{{jobValues}}" value="{{jobIndex}}">
+                {{jobValues[jobIndex]}}
+                </picker>
+                </view>
+                <block wx:if="{{jobKey ==80 }}">
+                    <view class="section">
+                        <text class="title">企业名称</text>
+                        <input  class="content " name="companyName" placeholder="输入企业名称" placeholderClass="placeholderStyle" value="{{companyName}}"></input>
+                    </view>
+                    <view class="section">
+                        <text class="title">成立时间</text>
+                        <image class="icon" src="/images/rightpoint.png"></image>
+                        <picker bindchange="changeIndex" class="{{companyTimeIndex==0?'nullcontent':'content'}}" data-sectionsign="companyTime" name="companyTime" range="{{companyTimeValues}}" value="{{companyTimeIndex}}">
+                    {{companyTimeValues[companyTimeIndex]}}
+                    </picker>
+                    </view>
+                </block>
+                <view class="section">
+                    <text class="title"><text class="red">*</text>是否有房</text>
+                    <image class="icon" src="/images/rightpoint.png"></image>
+                    <picker bindchange="changeIndex" class="{{haveHouseIndex==0?'nullcontent':'content'}}" data-sectionsign="haveHouse" name="haveHouse" range="{{haveHouseValues}}" value="{{haveHouseIndex}}">
+                {{haveHouseValues[haveHouseIndex]}}
+                </picker>
+                </view>
+                <view class="section">
+                    <text class="title"><text class="red">*</text>是否有车</text>
+                    <image class="icon" src="/images/rightpoint.png"></image>
+                    <picker bindchange="changeIndex" class="{{haveCarIndex==0?'nullcontent':'content'}}" data-sectionsign="haveCar" name="haveCar" range="{{haveCarValues}}" value="{{haveCarIndex}}">
+                {{haveCarValues[haveCarIndex]}}
+                </picker>
+                </view>
+                <view class="section">
+                    <text class="title"><text class="red">*</text>征信良好</text>
+                    <image class="icon" src="/images/rightpoint.png"></image>
+                    <picker bindchange="changeIndex" class="{{creditIndex==0?'nullcontent':'content'}}" data-sectionsign="credit" name="credit" range="{{creditValues}}" value="{{creditIndex}}">
+                {{creditValues[creditIndex]}}
+                </picker>
+                </view>
+            </view>
+            <view wx:for-items="{{houses}}" wx:for-item="item">
+            <view class="section-group">
+                <view class="house"><image mode="aspectFit" 
+                style="width:36rpx;height:36rpx;margin-left:-5rpx;margin-top:25rpx;position:absolute;" 
+                src="../../../../images/house_icon.png" />
+                <span style="margin-left:30rpx">第{{item.houseNum +1 }}套房产</span></view>
+                <view class="section">
+                    <text class="title">房产类型</text>
+                    <image class="icon" src="/images/rightpoint.png"></image>
+                    <picker bindchange="changeHouseTypeIndex" class="{{item.houseTypeIndex==0?'nullcontent':'content'}}" data-sectionsign="houseType" data-house-num="{{item.houseNum}}" name="houseType" range="{{houseTypeValues}}" value="{{item.houseTypeIndex}}">
+                {{houseTypeValues[item.houseTypeIndex]}}
+                </picker>
+                </view>
+                <view class="section">
+                    <text class="title">是否已抵押</text>
+                    <image class="icon" src="/images/rightpoint.png"></image>
+                    <picker bindchange="changeMortgageIndex" class="{{item.mortgageIndex==0?'nullcontent':'content'}}" data-sectionsign="mortgage" data-house-num="{{item.houseNum}}" name="mortgage" range="{{mortgageValues}}" value="{{item.mortgageIndex}}">
+                {{mortgageValues[item.mortgageIndex]}}
+                </picker>
+                </view>
+                <view class="section">
+                    <text class="title">房屋所在地</text>
+                    <image class="icon" src="/images/rightpoint.png"></image>
+                    <picker bindchange="changeAreaIndex" class="{{item.areaIndex==0?'nullcontent':'content'}}" data-sectionsign="area" data-house-num="{{item.houseNum}}" name="area" range="{{areaValues}}" value="{{item.areaIndex}}">
+                {{areaValues[item.areaIndex]}}
+                </picker>
+                </view>
+                <view class="section">
+                    <text class="title">市场价值(万元)</text>
+                    <input class="content" name="price" bindchange="changePriceIndex"  data-house-num="{{item.houseNum}}"placeholder="请输入此房产市场价格" placeholderClass="placeholderStyle" value="{{item.price}}"></input>
+                </view>
+                <block wx:if="{{item.mortgageKey ==10 }}">
+                    <view class="section">
+                        <text class="title">剩余房贷(万元)</text>
+                        <input class="content" name="price" bindchange="changeLoanAmountIndex"  data-house-num="{{item.houseNum}}"placeholder="请输入剩余房贷" placeholderClass="placeholderStyle" value="{{item.loanAmount}}"></input>
+                    </view>
+                    <view class="section">
+                        <text class="title">房贷月供(元)</text>
+                        <input class="content" name="price" bindchange="changeHouseMortPayIndex"  data-house-num="{{item.houseNum}}"placeholder="请输入房贷月供" placeholderClass="placeholderStyle" value="{{item.houseMortPay}}"></input>
+                    </view>
+                    <view class="section">
+                        <text class="title">连续月份</text>
+                        <input class="content" name="price" bindchange="changeHouseMortMonthIndex"  data-house-num="{{item.houseNum}}"placeholder="请输入房贷连续上交月份" placeholderClass="placeholderStyle" value="{{item.houseMortMonth}}"></input>
+                    </view>
+                </block>
+            </view>
+            </view>
+            <button bindtap="addHouse">添加房产</button>
+
+            <button bindtap="goBack" style="margin-top:45rpx;margin-bottom:45rpx;" class="submitButton submitButton-left" hoverClass="submitButton-hover">返回上一步</button>
+            <button  style="margin-top:45rpx;margin-bottom:45rpx;" class="submitButton submitButton-right" disabled="{{btnDisabled}}" formType="submit" hoverClass="submitButton-hover" loading="{{btnLoading}}">生成报告</button>
+        </form>
+    </view>
+</view>
+<view class="toast warn" wx:if="{{warnMsg}}">{{warnMsg}}</view>
+</view>

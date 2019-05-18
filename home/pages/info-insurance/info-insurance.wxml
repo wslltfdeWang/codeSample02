@@ -1,0 +1,16 @@
+<view class="page">
+	
+   <view style="width:100%;height:90%;text-align:center;margin-bottom:-146rpx;">
+    <image mode="aspectFit" src="https://golden-adviser.com:8443/images/insurance/insurance1_1.png"  style="width:670rpx;height:1200rpx;margin-top:-73rpx;">
+    </image>
+  </view>
+
+  <view style="width:100%;height:90%;text-align:center;">
+    <image mode="aspectFit" src="https://golden-adviser.com:8443/images/insurance/insurance2_2.png"
+    style="width:670rpx;height:1200rpx;margin-top:-165rpx">
+    </image>
+  </view>
+
+   <button bindtap="man"  class="submitButton submitButton-center" style="margin-top:-157rpx;" formType="submit" hoverClass="submitButton-hover">预约人工方案</button>
+
+</view>

@@ -1,0 +1,326 @@
+@import "../../../common/lib/weui.wxss";
+
+label {
+  display: inline-block;
+  min-width: 270rpx;
+  margin-right: 20rpx;
+}
+form{
+  width: 100%;
+}
+.picker-text {
+  margin-left: 20rpx;
+  position: relative;
+}
+
+.banner {
+    width: 100%;
+    height: 364rpx;
+    background-size: cover;
+    margin-top:-69rpx;
+}
+
+.selection-wrapper {
+    width: 670rpx;
+    margin: 0 auto 0 auto;
+    font-size: 0;
+}
+
+.selection {
+    position: relative;
+    display: inline-block;
+    width: 670rpx;
+    height: 530rpx;
+    background: #FAFAFA;
+    margin-bottom: 32rpx;
+    box-shadow: 0 8rpx 24rpx 0 rgba(0,0,0,0.05);
+    border-radius: 21rpx;
+}
+
+.selection-hover {
+    background-color: #f8f8f8;
+}
+
+.selection::after {
+    content: '';
+    position: absolute;
+    width: 24rpx;
+    height: 24rpx;
+    background-size: cover;
+    top: 62rpx;
+    left: 598rpx;
+}
+
+.selection ._img {
+    position: absolute;
+    width: 144rpx;
+    height: 144rpx;
+    left: 40rpx;
+    top: 28rpx;
+}
+
+.selection-txt {
+    position: absolute;
+    top: 72rpx;
+    left: 254rpx;
+    text-align: left;
+}
+
+.status {
+    color: #333;
+    font-size: 36rpx;
+    line-height: 50rpx;
+    font-weight: 600;
+}
+
+.desc {
+    color: #999;
+    font-size: 24rpx;
+    line-height: 34rpx;
+    margin-top: 4rpx;
+}
+
+.selection ._imgarrow {
+    position:absolute;
+  width:36rpx;
+  height:36rpx;
+  right:40rpx;
+  top:76rpx;
+}
+
+.module {
+  position: relative;
+  display: inline-block;
+  width: 670rpx;  
+  height:220rpx;
+  display:inline-block;
+  overflow:hidden;
+  margin-top:-50rpx;
+  margin-bottom:46rpx;
+  overflow:hidden;
+}
+
+/*资讯*/
+.he{
+  /*white-space: nowrap;*/
+   display: block;
+   height:603rpx
+}
+.y{
+    width: 33%; 
+    height: 500rpx;
+    display: inline-block;
+    margin-left: 10rpx;
+}
+/* pages/headLine/headLine.wxss */
+
+.headLine {
+  width: 100%;
+}
+
+.headLineWra {
+  height: 200rpx;
+  width: 100%;
+  border-bottom: 1rpx solid #ccc;
+}
+
+.headLineContent {
+  width: 100%;
+  height: 100%;
+  margin-left:2.5%;
+}
+
+.headLineTitle {
+  height: 86rpx;
+  line-height: 46rpx;
+  font-size: 36rpx;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; 
+}
+
+.headLineInfor {
+  width: 96%;
+  height: 20%;
+  font-size: 26rpx;
+  color: #666;
+  margin-top:19rpx;
+}
+
+.arrowsBox {
+  width: 20%;
+  height: 100%;
+}
+
+.arrowsBox image {
+  width: 116rpx;
+  height: 116rpx;
+  /*padding-left: 50rpx;*/
+}
+
+.moreButton {
+  margin-top: 20rpx;
+  width: 100%;
+  height:40rpx;
+  text-align: center;
+  /*line-height: 80rpx;*/
+  font-size: 28rpx;
+  color: #ccc
+}
+/*伸缩盒子模型*/
+.box {
+    display: -webkit-box; /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+    display: -moz-box; /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox; /* 混合版本语法: IE 10 */
+    display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+    display: flex; /* 新版本语法: Opera 12.1, Firefox 22+ */
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+
+/*从左至右*/
+
+.box-lr {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+}
+
+
+/*从右至左*/
+
+.box-rl {
+    -webkit-box-pack: end;
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: horizontal;
+    -moz-flex-direction: row-reverse;
+    -webkit-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+}
+
+
+/*从上至下*/
+
+.box-tb {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+
+/*从下至上*/
+
+.box-bt {
+    -webkit-box-pack: end;
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: vertical;
+    -moz-flex-direction: column-reverse;
+    -webkit-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+}
+
+
+/*主轴居中*/
+
+.box-pack-center {
+    -webkit-box-pack: center;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+
+/*主轴居左*/
+
+.box-pack-start {
+    -webkit-box-pack: start;
+    -moz-justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+}
+
+
+/*主轴居右*/
+
+.box-pack-end {
+    -webkit-box-pack: end;
+    -moz-justify-content: flex-end;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+}
+
+
+/*主轴左右不留白*/
+
+.box-pack-between {
+    -webkit-box-pack: justify;
+    -moz-justify-content: space-between;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
+
+/*主轴左右留白*/
+
+.box-pack-around {
+    -moz-justify-content: space-around;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+}
+
+
+/*交叉轴居中对齐*/
+
+.box-align-center {
+    -webkit-box-align: center;
+    -moz-align-items: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+
+/*交叉轴居左对齐*/
+
+.box-align-start {
+    -webkit-box-align: start;
+    -moz-align-items: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+}
+
+
+/*交叉轴居右对齐*/
+
+.box-align-end {
+    -webkit-box-align: end;
+    -moz-align-items: end;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+}
+
+
+.space {
+    position: relative;
+    display: inline-block;
+    width: 670rpx;
+    height: 30rpx;
+    margin-bottom: 32rpx;
+}
+
+.news-txt {
+  position:absolute;
+  left:44rpx;
+  text-align:left;
+}
+
+.more-txt {
+    position:absolute;
+    right:10rpx;
+}

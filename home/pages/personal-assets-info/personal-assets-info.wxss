@@ -1,0 +1,96 @@
+@import "../../../common/lib/weui.wxss";
+
+label {
+  display: inline-block;
+  min-width: 270rpx;
+  margin-right: 20rpx;
+}
+form{
+  width: 100%;
+}
+.picker-text {
+  margin-left: 20rpx;
+  position: relative;
+}
+
+.banner {
+    width: 100%;
+    height: 364rpx;
+    background-size: cover;
+    margin-top:-69rpx;
+}
+
+.selection-wrapper {
+    width: 670rpx;
+    margin: 5rpx auto 0 auto;
+    font-size: 0;
+}
+
+.selection {
+    position: relative;
+    display: inline-block;
+    width: 670rpx;
+    height: 530rpx;
+    background: #FAFAFA;
+    margin-bottom: 32rpx;
+    box-shadow: 0 8rpx 24rpx 0 rgba(0,0,0,0.05);
+    border-radius: 21rpx;
+}
+
+.selection-hover {
+    background-color: #f8f8f8;
+}
+
+.selection::after {
+    content: '';
+    position: absolute;
+    width: 24rpx;
+    height: 24rpx;
+    background-size: cover;
+    top: 62rpx;
+    left: 598rpx;
+}
+
+.selection ._img {
+    position: absolute;
+    width: 144rpx;
+    height: 144rpx;
+    left: 40rpx;
+    top: 28rpx;
+}
+
+.selection-txt {
+    position: absolute;
+    top: 72rpx;
+    left: 254rpx;
+    text-align: left;
+}
+
+.status {
+    color: #333;
+    font-size: 36rpx;
+    line-height: 50rpx;
+    font-weight: 600;
+}
+
+.desc {
+    color: #999;
+    font-size: 24rpx;
+    line-height: 34rpx;
+    margin-top: 4rpx;
+}
+
+.selection ._imgarrow {
+    position:absolute;
+	width:36rpx;
+	height:36rpx;
+	right:40rpx;
+	top:76rpx;
+}
+
+.house {
+	height:84rpx;
+	line-height:84rpx;
+	font-weight:bold;
+	font-size:37rpx;
+}

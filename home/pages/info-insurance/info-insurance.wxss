@@ -1,0 +1,14 @@
+@import "../../../common/lib/weui.wxss";
+
+page{
+   height:100%                        
+}
+.title {
+    display: inline-block;
+    width: 670rpx;
+    height:220rpx;
+    display:inline-block;
+    overflow:hidden;
+    margin-top:-50rpx;
+    margin-bottom:46rpx;
+}
